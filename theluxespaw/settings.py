@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--rq9@ge=vo8fpg6=im%64k7fde*d$$45h^nx_c_xpm9#)&lo29'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['8000-lauramayfox-theluxespaw-bek8pbyb4ww.ws.codeinstitute-ide.net', 
 '.herokuapp.com']
 
@@ -89,6 +89,11 @@ WSGI_APPLICATION = 'theluxespaw.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
