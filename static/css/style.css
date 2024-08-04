@@ -1,47 +1,20 @@
 body {
-    background-color: #F9FAFC;
+    background-color: white;
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
-}
-
-.red-o {
-    color: #E84610;
-}
 
 .thin {
     font-weight: 300;
 }
 
-.light-bg {
-    background-color: #fff;
-}
 
 .dark-bg {
     background-color: #F279BC;
 }
 
-.main-bg {
-    background-color: #F9FAFC;
+.container {
+    background-color: #f3e2e7;
 }
-
-
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
-}
-
 
 
 

@@ -2,12 +2,44 @@
 
 {% load static %}
 
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 
 {% block content %}
-<section>
-    <div>
-        test
+<div class="bg-custom mt-auto">
+            <img class="w-90 h-50 mx-auto img-fluid" id="hero"
+                src="static/images/pexels2.jpg"
+                alt="index_hero">
+       
+</div>
+
+<div class="container brief-container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-7">
+            <br>
+            <h1>Welcome To The Luxe Spaw</h1>
+            <br>
+            <div class="d-none d-md-block">
+                <p>Nestled in the heart of Dublin, our luxury grooming studio offers a premier experience for discerning dog owners who seek the very best for their four-legged companions. 
+                    Our state-of-the-art facility combines modern aesthetics with top-notch amenities, creating an inviting and serene environment where every dog is treated with the utmost care and attention. 
+                    Specializing in a comprehensive range of grooming services, from breed-specific cuts to indulgent spa treatments, our team of experienced and passionate groomers ensures that each pet leaves 
+                    looking and feeling their absolute best. At our studio, we believe that grooming is not just about appearance, but also about promoting the overall health and well-being of your cherished pet, 
+                    making it a haven for dog lovers in Dublin who desire nothing but excellence.</p>
+
+
+
+
+            </div>
+
+        </div>
+        <div class="col-sm-8 col-md-4 col-lg-4 order-first order-md-last text-center">
+            <img  src="{% static 'images/pexels1.jpg' %}"
+                 alt="Image" class="img-fluid">
+        </div>
     </div>
-</section>
+</div>
+
+
+
 
 {%endblock%}
