@@ -5,22 +5,23 @@ body {
 /* Index Page */
 
 .header-1 {
-    color: #F279BC;
+    color: #EF657C;
 }
 
 hr {
     margin: 0 auto;     
-    border-top: 1px solid #F279BC;
+    border-top: 1px solid #EF657C;
 }
 
 .container {
     background-color: white;
 }
 
+
 /* Button */
 
 .btn-white {
-    background-color: #F279BC;
+    background-color:#EF657C;
     margin: auto;
     color: white;
     box-shadow: #F279BC;
@@ -31,7 +32,7 @@ hr {
 /* Footer */
 
 .footer-bg {
-    background-color: #F279BC;
+    background-color: #EF657C;
 }
 
 .social-links i {
