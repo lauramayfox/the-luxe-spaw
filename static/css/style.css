@@ -2,15 +2,31 @@ body {
     background-color: white;
 }
 
+/* Index Page */
 
-.thin {
-    font-weight: 300;
+.header-1 {
+    color: #F279BC;
 }
 
+hr {
+    margin: 0 auto;     
+    border-top: 1px solid #F279BC;
+}
 
 .container {
-    background-color: #f3e2e7;
+    background-color: white;
 }
+
+/* Button */
+
+.btn-white {
+    background-color: #F279BC;
+    margin: auto;
+    color: white;
+    box-shadow: #F279BC;
+
+}
+
 
 /* Footer */
 
