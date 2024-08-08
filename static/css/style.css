@@ -30,6 +30,12 @@ hr {
 
 }
 
+/* Nav Bar */
+
+.menu {
+    float: right; 
+    margin: 0;   
+}
 
 /* Footer */
 

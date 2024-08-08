@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'theluxespaw',
     'django_summernote',
     'grooming',
+    'about',
 ]
 
 MIDDLEWARE = [
