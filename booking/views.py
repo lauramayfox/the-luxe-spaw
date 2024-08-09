@@ -30,5 +30,3 @@ def booking(request):
         #Store day and service in django session:
         request.session['day'] = day
         request.session['service'] = service
-
-        return redirect('bookingSubmit')
