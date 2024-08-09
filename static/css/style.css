@@ -53,7 +53,16 @@ poodle {
     margin: 0.7rem;
 }
 
-/* Groomers */
+/* Staff */
+
 .card-style {
-    margin: 5%
+     
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: small;
 }
+
+h2 {
+    color: #EF657C;
+}
+
