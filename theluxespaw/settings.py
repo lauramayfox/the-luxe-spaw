@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['8000-lauramayfox-theluxespaw-bek8pbyb4ww.ws.codeinstitute-ide.
 '.herokuapp.com']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'theluxespaw',
     'django_summernote',
     'grooming',
+    'booking', 
 ]
 
 MIDDLEWARE = [
