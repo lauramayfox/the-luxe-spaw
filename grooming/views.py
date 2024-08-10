@@ -17,3 +17,10 @@ def about(request, template_name="about.html"):
         request, template_name,
     )
 
+    # Contact Page
+
+def contact(request, template_name="contact.html"):
+    return render(
+        request, template_name,
+    )
+
