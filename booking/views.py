@@ -12,21 +12,9 @@ def index(request):
     return render(request, "index.html",{})
 
 
+#Booking Form
 def booking(request):
-    #Calling 'validWeekday' Function to Loop days you want in the next 21 days:
-    weekdays = validWeekday(22)
-
-    #Only show the days that are not full:
-    validateWeekdays = isWeekdayValid(weekdays)
-    
-
-    if request.method == 'POST':
-        service = request.POST.get('service')
-        day = request.POST.get('day')
-        if service == None:
-            messages.success(request, "Please Select A Grooming Service")
-            return redirect('booking')
-
-        #Store day and service in django session:
-        request.session['day'] = day
-        request.session['service'] = service
+    """
+    Renders booking page
+    """
+    return render(request, 'booking.html')

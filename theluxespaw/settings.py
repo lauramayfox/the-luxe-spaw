@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure--rq9@ge=vo8fpg6=im%64k7fde*d$$45h^nx_c_xpm9#)&lo29'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['8000-lauramayfox-theluxespaw-bek8pbyb4ww.ws.codeinstitute-ide.net', 
 '.herokuapp.com']
 
@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'theluxespaw',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'django_summernote',
     'grooming',
     'booking', 
@@ -58,6 +60,11 @@ INSTALLED_APPS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Crispy Forms
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

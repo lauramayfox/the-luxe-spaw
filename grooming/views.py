@@ -10,9 +10,9 @@ def home(request, template_name="index.html"):
         request, template_name
     )
 
-# About Page
+# Services Page
 
-def about(request, template_name="about.html"):
+def services(request, template_name="services.html"):
     return render(
         request, template_name,
     )

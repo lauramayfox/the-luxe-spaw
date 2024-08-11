@@ -27,7 +27,9 @@
     <a href="mailto:laurafox91@gmail.com">luxespaw@gmail.com</a>
     <h4>Phone number</h4>
     <p>(01) 2877314</p>
-    <p><a href="" style="text-decoration:none;">
+    
+    <p><a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
+        {% else %} href="{% url 'booking' %}"{% endif %} style="text-decoration:none;">
         <button type="button" class="mb-0 btn btn-white">
           Book Online
          </button>
