@@ -18,3 +18,5 @@ def booking(request):
     Renders booking page
     """
     return render(request, 'booking.html')
+
+

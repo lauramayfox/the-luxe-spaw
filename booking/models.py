@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+DAYS = ((0, 'Monday'), (1, 'Tuesday'), (2, 'Wednesday'),
+        (3, 'Thursday'), (4, 'Friday'), (5, 'Saturday'), (6, 'Sunday'),)
+
 GROOMING_CHOICES = (
     ("X-Large Size Grooming", "X-Large Size Grooming"),
     ("Large Size Grooming", "Large Size Grooming"),
@@ -34,23 +37,32 @@ TIME_CHOICES = (
     ("7 PM", "7 PM"),
 )
 
-class UserProfile(models.Model):
+# class UserProfile(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(null=True, max_length=50)
-    last_name = models.CharField(null=True, max_length=50)
-    email = models.EmailField(max_length=300)
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     first_name = models.CharField(null=True, max_length=50)
+#     last_name = models.CharField(null=True, max_length=50)
+#     email = models.EmailField(max_length=300)
 
-    def __str__(self):
-        if self.user:
-            return self.email
+#     def __str__(self):
+#         if self.user:
+#             return self.email
 
+
+# class Service(models.Model):
+#     # Service model for storing services data.
+#     name = models.CharField(max_length=200, unique=True)
+#     price = models.DecimalField(max_digits=5, decimal_places=2)
+#     description = models.TextField(default='')
+
+#     def __str__(self):
+#         return self.name
 
 # Booking
-class Booking(models.Model):
+# class Booking(models.Model):
 
-    booking_customer = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True)
-    booking_date = models.DateField(default=datetime.date)
-    booking_time = models.CharField(choices=TIME_CHOICES, default='10 AM', max_length=50)
-    booked_on = models.DateTimeField(auto_now_add=True)
-    is_confirmed = models.CharField(choices=CONFIRMATION, default='Awaiting confirmation', max_length=50)
+#     booking_customer = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True)
+#     booking_date = models.DateField(default=datetime.date)
+#     booking_time = models.CharField(choices=TIME_CHOICES, default='10 AM', max_length=50)
+#     booked_on = models.DateTimeField(auto_now_add=True)
+#     is_confirmed = models.CharField(choices=CONFIRMATION, default='Awaiting confirmation', max_length=50)
