@@ -7,6 +7,45 @@
 {% block content %}
 <br>
 <div class="container brief-container mt-6 mb-5">
+  <h1 class="header-1">Services</h1>
+  <div class="col-md-7">
+  <hr>
+  </div>
+  <br></div>
+
+  <div class="container brief-container mt-6 mb-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="d-none d-md-block">
+                <p>
+                  At The Luxe Spaw, we offer a range of premium grooming services tailored to ensure your pet looks and feels their best. Our Full Groom service includes a luxurious bath, gentle blow-dry, precise haircut to your desired style, ear cleaning, nail trim, and a refreshing teeth cleaning. For those looking for a simpler service, our Bath and Blow-Dry option offers a thorough cleansing and gentle drying, perfect for maintaining a healthy coat between full grooms. Ear Cleaning removes any debris and helps prevent infections, while our Nail Trim ensures your pet's paws stay healthy and comfortable. The Teeth Cleaning service promotes good oral hygiene, reducing tartar build-up and keeping your pet’s breath fresh.
+                  <br>
+                  <br>
+                  We cater to pets of all sizes, with Small Breeds typically weighing up to 20 pounds, such as Chihuahuas and Pomeranians. Medium Breeds range from 21 to 50 pounds, including breeds like Cocker Spaniels and Bulldogs. Large Breeds fall between 51 and 80 pounds, covering breeds like Labradors and Golden Retrievers. Finally, X-Large Breeds exceed 80 pounds, such as Great Danes and Saint Bernards. No matter the size, The Luxe Spaw ensures each pet receives individualized care with the finest products and techniques.<br>
+                <br>
+
+                 <!-- Button -->
+                 <a href="" style="text-decoration:none;" class="d-flex flex-column justify-content-center">
+                <button type="button" class="mb-0 btn btn-white">
+                  Book Now!
+                 </button>
+                 </a>
+            </p>
+
+            </div>
+
+        </div>
+        <div class="col-sm-8 col-md-4 col-lg-4 order-first order-md-last text-center">
+            <img  src="{% static 'images/pexels2.jpg' %}"
+                 alt="Dog Image" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+
+
+<br>
+<div class="container brief-container mt-6 mb-5">
     <h1 class="header-1">PriceList</h1>
     <div class="col-md-7">
     <hr>
@@ -16,12 +55,56 @@
 </div>
 
 <div class="container text-center">
-  <div class="row row-cols-2">
-    <div class="col">Column</div>
-    <div class="col">Column</div>
-    <div class="col">Column</div>
-    <div class="col">Column</div>
+  <div class="row row-cols-sm-5 header-1">
+    <div class="col colum-color-1"><h5>Service</h5></div>
+    <div class="col colum-color-1"><h5>Full Groom</h5></div>
+    <div class="col colum-color-1"><h5>Bath + Blowdry</h5></div>
+    <div class="col colum-color-1"><h5>Nails/Ears</h5></div>
+    <div class="col colum-color-1"><h5>Teeth</h5></div>
   </div>
 </div>
+
+<div class="container text-center">
+  <div class="row row-cols-sm-5">
+    <div class="col ">Small</div>
+    <div class="col">65</div>
+    <div class="col">30</div>
+    <div class="col">20</div>
+    <div class="col">15</div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row row-cols-sm-5">
+    <div class="col colum-color-1">Medium</div>
+    <div class="col colum-color-1">75</div>
+    <div class="col colum-color-1">40</div>
+    <div class="col colum-color-1">20</div>
+    <div class="col colum-color-1">15</div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row row-cols-sm-5">
+    <div class="col">Large</div>
+    <div class="col">85</div>
+    <div class="col">50</div>
+    <div class="col">20</div>
+    <div class="col">15</div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row row-cols-sm-5">
+    <div class="col colum-color-1">X-Large</div>
+    <div class="col colum-color-1">95</div>
+    <div class="col colum-color-1">60</div>
+    <div class="col colum-color-1">20</div>
+    <div class="col colum-color-1">15</div>
+  </div>
+</div>
+<br>
+<br>
+
 
 {%endblock%}
