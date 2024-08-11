@@ -20,3 +20,7 @@ def booking(request):
     return render(request, 'booking.html')
 
 
+def user_profile(request):
+
+    return render(
+                request, 'user-profile.html', )
