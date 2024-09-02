@@ -1,26 +1,78 @@
+/* Generic */
+
 body {
-    background-color: #F9FAFC;
+    background-color: white;
 }
 
+/* Index Page */
 
-.thin {
-    font-weight: 300;
+.header-1 {
+    color: #EF657C;
 }
 
-.light-bg {
-    background-color: #fff;
+hr {
+    margin: 0 auto;     
+    border-top: 1px solid #EF657C;
 }
 
-.dark-bg {
-    background-color: #F279BC;
+poodle {
+    size: 0.5em;
 }
 
 .container {
-    background-color: #F2C2CF;
+    background-color: white;
 }
 
 
+/* Button */
 
+.btn-white {
+    background-color:#EF657C;
+    margin: auto;
+    color: white;
+    box-shadow: #F279BC;
 
+}
 
+/* Nav Bar */
+
+.menu {
+    float: right; 
+    margin: 0;   
+}
+
+/* Footer */
+
+.footer-bg {
+    background-color: #EF657C;
+}
+
+.social-links i {
+    color:  white;
+    font-size: 1.5rem;
+    margin: 0.7rem;
+}
+
+/* Staff */
+
+.card-style {
+     
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: small;
+}
+
+h2 {
+    color: #EF657C;
+}
+
+/* Contact */
+
+h4 {
+    color:#EF657C;
+}
+
+.colum-color-1 {
+    background-color: #ef657c3a;
+}
 
