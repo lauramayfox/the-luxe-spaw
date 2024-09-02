@@ -27,7 +27,7 @@
 
                  <!-- Button -->
                  <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                 {% else %} href="{% url 'booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
+                 {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
                 <button type="button" class="mb-0 btn btn-white">
                   Book Now!
                  </button>

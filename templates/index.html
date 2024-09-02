@@ -32,7 +32,7 @@
 
                  <!-- Button -->
                  <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                 {% else %} href="{% url 'booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
+                 {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
                 <button type="button" class="mb-0 btn btn-white">
                   Book Now!
                  </button>
@@ -73,7 +73,7 @@
                             When he’s not grooming, you’ll find him spending quality time with his beloved Vizsla, Ruby.<br>
                             <br>
                             <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                            {% else %} href="{% url 'booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
+                            {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
                            <button type="button" class="mb-0 btn btn-white">
                                   Book
                                  </button>
@@ -95,7 +95,7 @@
                                                 <br><br>When she’s not managing the salon or working her magic on clients, Pam loves nothing more than a cosy night in with her own small rescue dog, Jack, who inspires her dedication to giving every dog the special care they deserve.<br>
                                             <br>
                                             <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                 {% else %} href="{% url 'booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
+                 {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
                 <button type="button" class="mb-0 btn btn-white">
                                                       Book
                                                      </button>
@@ -117,7 +117,7 @@
             Her enthusiasm and commitment shine through in everything she does, making her a beloved member of the team and a future star in the grooming world.<br>
             <br>
             <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                 {% else %} href="{% url 'booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
+                 {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
                 <button type="button" class="mb-0 btn btn-white">
                   Book
                  </button>

@@ -15,6 +15,11 @@
                 <br>
                 <div class="header-1 text-center"><h3>Book Grooming Appointment</h3>
                 </div><br>
+
+                <script>
+                    document.getElementById('id_service')
+                    .addEventListener('change', updateGroomers)
+                </script>
    
        
   
@@ -23,6 +28,7 @@
                 <div class="card-body min-vh-60 .container-fluid">
                     <form action="" method="POST">
                         {% csrf_token %}
+                        {{form.as_p}}
                         
                         <div class=".col-sm-6 .col-md-7">
                         <label for="service">Service</label>
