@@ -140,31 +140,6 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <!--Font Awesome-->
         <script src="https://kit.fontawesome.com/f5fb20c689.js" crossorigin="anonymous"></script>
-<!--JavaScript-->
-<script>
-    //Update groomer drop down based on service choice
-    function updateGroomers() {
-        var serviceId = 
-        document.getElementById('id_service').value;
-        var groomerSelect = document.getElementById('id_groomer')
-        groomerSelect.innerHTML = '';
-        fetch(`/booking/get_groomers/?service_id=${serviceId}`)
-        .then(response =>
-            response.json())
-            .then(data => {
-                data.groomers.forEach(groomer => {
-                    var option = 
-                    document.createElement('option');
-                    option.value =
-                    groomer.id;
 
-                    option.textContrnt =groomer.name;
-                    groomerSelect.appendChild(option);
-
-    
-                });
-            });
-        }
-</script>
 </body>
 </html>

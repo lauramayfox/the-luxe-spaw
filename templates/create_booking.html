@@ -16,72 +16,58 @@
                 <div class="header-1 text-center"><h3>Book Grooming Appointment</h3>
                 </div><br>
 
-                <script>
-                    document.getElementById('id_service')
-                    .addEventListener('change', updateGroomers)
-                </script>
-   
-       
-  
 
-
-                <div class="card-body min-vh-60 .container-fluid">
-                    <form action="" method="POST">
+                <div class="card-body min-vh-60 container-fluid">
+                    <form method="POST" id="booking-form">
                         {% csrf_token %}
-                        {{form.as_p}}
                         
-                        <div class=".col-sm-6 .col-md-7">
-                        <label for="service">Service</label>
-                        <select id='service' name="service" title="services" class="form-select mb-4"
-                            hx-get=""
-                            hx-trigger="change"
-                            hx-target="#groomers">
-                            <option selected disabled>Choose a service</option>
-                            
-                            <option value=""></option>
-                        
-                        </select>
+                        <!-- Service Selection -->
+                        <div class="form-group .col-sm-6 .col-md-7">
+                            <label for="id_service">Service</label>
+                            <select id="id_service" name="service" title="services" class="form-select mb-4" onchange="updateGroomers()">
+                                <!-- prompting the user to choose a service -->
+                                <option selected disabled>Choose a service</option>
+                                
+                                <!--loop over services -->
+                                {% for service in form.service.field.queryset %}
+                                    <option value="{{ service.id }}">{{ service.name }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
 
-                        <div class=".col-sm-6 .col-md-7">
-                            <label for="service">Groomer</label>
-                            <select id='service' name="service" title="services" class="form-select mb-4"
-                                hx-get=""
-                                hx-trigger="change"
-                                hx-target="#groomers">
+
+                           <!-- Groomer Selection -->
+                           <div class="form-group .col-sm-6 .col-md-7">
+                            <label for="id_groomer">Groomer</label>
+                            <select id="id_groomer" name="groomer" class="form-select mb-4">
                                 <option selected disabled>Choose a groomer</option>
-                                
-                                <option value=""></option>
-                            
+                                {% for groomer in form.fields.groomer.queryset %}
+                                    <option value="{{ groomer.id }}">{{ groomer.name }}</option>
+                                {% endfor %}
                             </select>
-                            </div>
+                        </div>
 
-                        <div class=".col-sm-6 .col-md-7">
-                            <form action="" method="POST">
-                                {% csrf_token %}
-                                <label for="time">Time</label>
-                                <select id='time' name="booking_time" required title="time" class="form-select mb-4" hx-get=""
-                                    hx-trigger="change" hx-target="#">
-                                    <option selected disabled>Choose a time</option>
-                                    
-                                    <option value=""></option>
-                                
-                                </select>
+                                    <!-- Time Dropdown -->
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <select id='time' name="time" class="form-select mb-4">
+                                <option selected disabled>Choose a time</option>
+                                {% for time in available_times %}
+                                    <option value="{{ time }}">{{ time }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="booking_date">Date</label>
-                                <input type="date" class="form-control" id="booking_date"
-                                    name="booking_date" required>
-                                    <br>
-                            </div>
-
-
+                    <!-- Date Picker -->
+                    <div class="form-group col-sm-6 col-md-7">
+                        <label for="date">Date</label>
+                        {{ form.booking_date }}
+                    </div>
 
                        <button class="btn btn-book" type="submit" id="submit">Book</button>
                         <a class="btn btn-cancel" href="">Cancel</a>
                       
-                    </form>
+
 
                 </div>  
             </div>                
@@ -90,5 +76,9 @@
     </div> 
 
 {% endif %} 
+
+{% endblock %}
+
+{% block extra_scripts %}
 
 {% endblock %}

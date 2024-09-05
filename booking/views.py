@@ -1,48 +1,42 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from .forms import BookingForm
-from django.http import HttpResponse, HttpResponseRedirect
-from datetime import datetime, timedelta
 from .models import Groomer, Service
-from django.contrib import messages
-# Create your views here.
+from datetime import datetime, timedelta, time
 
 def create_booking(request):
-
-    """
-    Renders booking page
-    """
-    return render(request, 'create_booking.html')
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
-            return
-            redirect('booking_success') # redirect to a booking success confirmation page/msg
-        else:
-                form = BookingForm()
-                return render(request, 'booking/create_booking.html', {'form': form})
+            return redirect('booking_success')
+    else:
+        form = BookingForm()
 
+    # Define available times based on business hours
+    available_times = [
+        "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00",  # Weekday hours
+        "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"  # Saturday hours
+    ]
+
+    return render(request, 'create_booking.html', {'form': form, 'available_times': available_times})
 
 
 def booking_success(request):
-    return render(request, 'booking/booking_success.html')
+    """
+    Renders a booking success confirmation page.
+    """
+    return render(request, 'booking_success.html')
 
 def index(request):
     """
-    Renders Home Pg
+    Renders Home Page.
     """
-    return render(request, "index.html",{})
-
-
-# #Booking Form
-# def booking(request):
-#     """
-#     Renders booking page
-#     """
-#     return render(request, 'create_booking.html')
-
+    return render(request, "index.html", {})
 
 def user_profile(request):
+    """
+    Renders the user profile page.
+    """
+    return render(request, 'user-profile.html')
 
-    return render(
-                request, 'user-profile.html', )
