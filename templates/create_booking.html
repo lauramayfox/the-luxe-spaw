@@ -1,84 +1,117 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
-
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% block content %}
 
- {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 
-        <div class="container bg-custom my-5 py-4">
-            <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-10"> 
+<div class="container bg-custom my-5 py-4">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-10">
             <div class="colum-color-1">
                 <br>
-                <div class="header-1 text-center"><h3>Book Grooming Appointment</h3>
-                </div><br>
+                <div class="header-1 text-center">
+                    <h3>Book Grooming Appointment</h3>
+                </div>
+                <br>
 
-
-                <div class="card-body min-vh-60 container-fluid">
+                <div class="card-body min-vh-60">
                     <form method="POST" id="booking-form">
                         {% csrf_token %}
-                        
+
                         <!-- Service Selection -->
-                        <div class="form-group .col-sm-6 .col-md-7">
-                            <label for="id_service">Service</label>
-                            <select id="id_service" name="service" title="services" class="form-select mb-4" onchange="updateGroomers()">
-                                <!-- prompting the user to choose a service -->
-                                <option selected disabled>Choose a service</option>
-                                
-                                <!--loop over services -->
-                                {% for service in form.service.field.queryset %}
-                                    <option value="{{ service.id }}">{{ service.name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-
-
-                           <!-- Groomer Selection -->
-                           <div class="form-group .col-sm-6 .col-md-7">
-                            <label for="id_groomer">Groomer</label>
-                            <select id="id_groomer" name="groomer" class="form-select mb-4">
-                                <option selected disabled>Choose a groomer</option>
-                                {% for groomer in form.fields.groomer.queryset %}
-                                    <option value="{{ groomer.id }}">{{ groomer.name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-
-                                    <!-- Time Dropdown -->
                         <div class="form-group">
-                            <label for="time">Time</label>
-                            <select id='time' name="time" class="form-select mb-4">
-                                <option selected disabled>Choose a time</option>
-                                {% for time in available_times %}
-                                    <option value="{{ time }}">{{ time }}</option>
-                                {% endfor %}
+                            <label for="id_service">Service</label>
+                            {{ form.service|as_crispy_field }}
+                        </div>
+
+                        <!-- Groomer Selection -->
+                        <div class="form-group">
+                            <label for="id_groomer">Groomer</label>
+                            {{ form.groomer|as_crispy_field }}
+                        </div>
+
+                        <!-- Booking Date Field -->
+                        <div class="form-group">
+                            <label for="id_booking_date">Date</label>
+                            {{ form.booking_date|as_crispy_field }}
+                        </div>
+
+                        <!-- Booking Time Dropdown -->
+                        <div class="form-group">
+                            <label for="id_booking_time">Time</label>
+                            <select id="id_booking_time" name="booking_time" class="form-select mb-4">
+                                {% if form.fields.booking_time.choices %}
+                                    {% for value, label in form.fields.booking_time.choices %}
+                                        <option value="{{ value }}">{{ label }}</option>
+                                    {% endfor %}
+                                {% else %}
+                                    <option disabled>No available times</option>
+                                {% endif %}
                             </select>
                         </div>
 
-                    <!-- Date Picker -->
-                    <div class="form-group col-sm-6 col-md-7">
-                        <label for="date">Date</label>
-                        {{ form.booking_date }}
-                    </div>
-
-                       <button class="btn btn-book" type="submit" id="submit">Book</button>
-                        <a class="btn btn-cancel" href="">Cancel</a>
-                      
-
-
-                </div>  
-            </div>                
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-center mt-4">
+                            <button class="btn btn-book btn-white me-2" type="button" data-bs-toggle="modal" data-bs-target="#confirmBookingModal">
+                                Book
+                            </button>
+                            <button class="btn btn-cancel btn-white" type="button" data-bs-toggle="modal" data-bs-target="#confirmCancelModal">
+                                Cancel
+                            </button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-    </div> 
+</div>
 
-{% endif %} 
-
-{% endblock %}
-
-{% block extra_scripts %}
+{% endif %}
 
 {% endblock %}
+
+<!-- {% block extra_scripts %}
+
+<div class="modal fade" id="confirmBookingModal" tabindex="-1" aria-labelledby="confirmBookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmBookingModalLabel">Confirm Booking</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to book this appointment?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="confirm-booking">Confirm Booking</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="confirmCancelModal" tabindex="-1" aria-labelledby="confirmCancelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmCancelModalLabel">Confirm Cancellation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to cancel this booking request?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="cancel-booking">Cancel Booking</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} -->
