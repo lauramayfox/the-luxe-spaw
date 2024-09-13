@@ -1,19 +1,36 @@
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Handle booking confirmation
-    const confirmBookingButton = document.querySelector('#confirm-booking');
-    const cancelBookingButton = document.querySelector('#cancel-booking');
+    // Manually initialize Bootstrap modals
+    var confirmBookingModalElement = document.getElementById('confirmBookingModal');
+    var confirmCancelModalElement = document.getElementById('confirmCancelModal');
 
-    if (confirmBookingButton) {
-        confirmBookingButton.addEventListener('click', function () {
-            document.querySelector('#booking-form').submit();  // Submit the form when booking is confirmed
-        });
-    }
+    // Initialize Bootstrap Modal instances if the modal elements are found
+    if (confirmBookingModalElement && confirmCancelModalElement) {
+        var confirmBookingModal = new bootstrap.Modal(confirmBookingModalElement);
+        var confirmCancelModal = new bootstrap.Modal(confirmCancelModalElement);
 
-    if (cancelBookingButton) {
-        cancelBookingButton.addEventListener('click', function () {
-            window.location.href = '/';  // Adjust the URL if needed; this cancels the operation and redirects
-        });
+        // Get the buttons that perform actions inside the modal
+        const confirmBookingButton = document.getElementById('confirm-booking');
+        const cancelBookingButton = document.getElementById('cancel-booking');
+
+        // Handle the booking confirmation action
+        if (confirmBookingButton) {
+            confirmBookingButton.addEventListener('click', function () {
+                // Submit the form to confirm booking
+                document.getElementById('booking-form').submit();
+            });
+        }
+
+        // Handle the cancel booking action
+        if (cancelBookingButton) {
+            cancelBookingButton.addEventListener('click', function () {
+                // Redirect to the create_booking page or any desired action
+                window.location.href = 'create_booking.html';
+            });
+        }
     }
 });
+
+
 
 

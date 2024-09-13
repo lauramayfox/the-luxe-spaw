@@ -24,19 +24,19 @@
 
                         <!-- Service Selection -->
                         <div class="form-group">
-                            <label for="id_service">Service</label>
+                            <label for="id_service"></label>
                             {{ form.service|as_crispy_field }}
                         </div>
 
                         <!-- Groomer Selection -->
                         <div class="form-group">
-                            <label for="id_groomer">Groomer</label>
+                            <label for="id_groomer"></label>
                             {{ form.groomer|as_crispy_field }}
                         </div>
 
                         <!-- Booking Date Field -->
                         <div class="form-group">
-                            <label for="id_booking_date">Date</label>
+                            <label for="id_booking_date"></label>
                             {{ form.booking_date|as_crispy_field }}
                         </div>
 
@@ -53,18 +53,21 @@
                                 {% endif %}
                             </select>
                         </div>
+                    </form>
 
                         <!-- Buttons -->
-                        <div class="d-flex justify-content-center mt-4">
-                            <button class="btn btn-book btn-white me-2" type="button" data-bs-toggle="modal" data-bs-target="#confirmBookingModal">
-                                Book
-                            </button>
-                            <button class="btn btn-cancel btn-white" type="button" data-bs-toggle="modal" data-bs-target="#confirmCancelModal">
-                                Cancel
-                            </button>
-                        </div>
+                         <!-- Trigger buttons in your form -->
+                            <div class="d-flex justify-content-center mt-4">
+                                <a class="btn btn-book btn-white me-2"data-bs-toggle="modal" data-bs-target="#confirmBookingModal">
+                                    Book
+                                </a>
+                                <a class="btn btn-cancel btn-white" data-bs-toggle="modal" data-bs-target="#confirmCancelModal">
+                                    Cancel
+                                </a>
+                            </div>
+
                         
-                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -73,10 +76,7 @@
 
 {% endif %}
 
-{% endblock %}
-
-<!-- {% block extra_scripts %}
-
+<!-- Booking Confirmation Modal -->
 <div class="modal fade" id="confirmBookingModal" tabindex="-1" aria-labelledby="confirmBookingModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -85,7 +85,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to book this appointment?
+                <p>Service: <span id="booking-service"></span></p>
+                <p>Groomer: <span id="booking-groomer"></span></p>
+                <p>Date: <span id="booking-date"></span></p>
+                <p>Time: <span id="booking-time"></span></p>
+                <p>Are you sure you want to book this appointment?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -95,7 +99,7 @@
     </div>
 </div>
 
-
+<!-- Cancel Confirmation Modal -->
 <div class="modal fade" id="confirmCancelModal" tabindex="-1" aria-labelledby="confirmCancelModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -114,4 +118,10 @@
     </div>
 </div>
 
-{% endblock %} -->
+  
+
+{% endblock %}
+
+{% block extra_scripts %}
+
+{% endblock %} 
