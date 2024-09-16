@@ -11,7 +11,7 @@
     if (confirmBookingButton) {
         confirmBookingButton.addEventListener('click', function () {
             console.log('Confirm booking button clicked');
-            // Submit the form or make AJAX request to confirm booking
+       
             document.getElementById('booking-form').submit();
         });
     }
@@ -20,11 +20,11 @@
     const cancelBookingButton = document.getElementById('cancel-booking');
     if (cancelBookingButton) {
         cancelBookingButton.addEventListener('click', function () {
-            window.location.href = '/'; // Redirect to home
+            window.location.href = 'booking/create_booking.html';
         });
     }
 
-    // Show booking confirmation modal with details
+ 
     const bookButton = document.querySelector('[data-bs-target="#confirmBookingModal"]');
     if (bookButton) {
         bookButton.addEventListener('click', function () {

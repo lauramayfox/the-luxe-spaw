@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block content %}
+<h2>Update Booking</h2>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Update Booking</button>
+</form>
+
+{% endblock %}

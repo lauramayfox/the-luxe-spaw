@@ -24,3 +24,4 @@ def contact(request, template_name="contact.html"):
         request, template_name,
     )
 
+

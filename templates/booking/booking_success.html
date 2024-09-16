@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block content %}
+<div class="container bg-custom my-5 py-4">
+    <div class="container mt-5 text-center">
+    <h2>Thank you for your booking request!</h2>
+    </div>
+
+    <div class="text-center"><p>Your booking has been successfully submitted. 
+    You can view and manage your booking in your profile.</p>
+    </div>
+</div>
+{% endblock %}
