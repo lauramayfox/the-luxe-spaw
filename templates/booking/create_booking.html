@@ -21,26 +21,27 @@
                 <div class="card-body min-vh-60">
                     <form method="POST" action="{% url 'confirm_booking' %}" id="booking-form">
                         {% csrf_token %}
+                        {{ form.as_p }}
 
-                        <!-- Service Selection -->
-                        <div class="form-group">
+                       
+                        <!-- <div class="form-group">
                             <label for="id_service"></label>
                             {{ form.service|as_crispy_field }}
                         </div>
 
-                        <!-- Groomer Selection -->
+                        
                         <div class="form-group">
                             <label for="id_groomer"></label>
                             {{ form.groomer|as_crispy_field }}
                         </div>
 
-                        <!-- Booking Date Field -->
+                        
                         <div class="form-group">
                             <label for="id_booking_date"></label>
                             {{ form.booking_date|as_crispy_field }}
                         </div>
 
-                        <!-- Booking Time Dropdown -->
+                       
                         <div class="form-group">
                             <label for="id_booking_time">Time</label>
                             <select id="id_booking_time" name="booking_time" class="form-select mb-4">
@@ -52,7 +53,7 @@
                                     <option disabled>No available times</option>
                                 {% endif %}
                             </select>
-                        </div>
+                        </div> -->
 
                         <div class="d-flex justify-content-center mt-4">
                             <button class="btn btn-book btn-white me-2" type="button" data-bs-toggle="modal" data-bs-target="#confirmBookingModal">

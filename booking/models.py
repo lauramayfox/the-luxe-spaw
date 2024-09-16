@@ -22,7 +22,7 @@ class Service(models.Model):
 class Booking(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     groomer = models.ForeignKey(Groomer, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     customer_name = models.CharField(max_length=100)
     booking_date = models.DateField()
     booking_time = models.TimeField()

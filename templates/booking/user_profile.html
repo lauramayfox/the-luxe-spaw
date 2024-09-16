@@ -25,7 +25,45 @@
         </div>
         </section>
 
+
+        <h2 class="text-center">My Bookings</h2>
+</div>
 <div class="container mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>Groomer</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.service }}</td>
+                <td>{{ booking.groomer }}</td>
+                <td>{{ booking.booking_date }}</td>
+                <td>{{ booking.booking_time }}</td>
+                <td>
+                    <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Update</a>
+                    <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr class="container mt-4 text-center">
+                <td colspan="6">You have no current booking appointments.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+    
+<!-- <div class="container mt-4">
 <h2 class="text-center">My Bookings</h2>
 </div>
 <div class="container mt-4">
@@ -61,5 +99,6 @@
     </table>
 </div>
 
-{% endif %} 
+{% endif %}  -->
 {% endblock %}
+
