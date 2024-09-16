@@ -19,42 +19,11 @@
                 <br>
 
                 <div class="card-body min-vh-60">
-                    <form method="POST" action="{% url 'confirm_booking' %}" id="booking-form">
+                    <form method="POST" id="booking-form">
                         {% csrf_token %}
                         {{ form.as_p }}
 
                        
-                        <!-- <div class="form-group">
-                            <label for="id_service"></label>
-                            {{ form.service|as_crispy_field }}
-                        </div>
-
-                        
-                        <div class="form-group">
-                            <label for="id_groomer"></label>
-                            {{ form.groomer|as_crispy_field }}
-                        </div>
-
-                        
-                        <div class="form-group">
-                            <label for="id_booking_date"></label>
-                            {{ form.booking_date|as_crispy_field }}
-                        </div>
-
-                       
-                        <div class="form-group">
-                            <label for="id_booking_time">Time</label>
-                            <select id="id_booking_time" name="booking_time" class="form-select mb-4">
-                                {% if form.fields.booking_time.choices %}
-                                    {% for value, label in form.fields.booking_time.choices %}
-                                        <option value="{{ value }}">{{ label }}</option>
-                                    {% endfor %}
-                                {% else %}
-                                    <option disabled>No available times</option>
-                                {% endif %}
-                            </select>
-                        </div> -->
-
                         <div class="d-flex justify-content-center mt-4">
                             <button class="btn btn-book btn-white me-2" type="button" data-bs-toggle="modal" data-bs-target="#confirmBookingModal">
                                 Book

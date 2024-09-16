@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="text-center mt-4">
+        <h2 class="mb-4">Are you sure you want to delete this booking appointment?</h2>
+        <div class="d-inline-block">
+            <button type="submit" class="btn btn-book btn-white me-2 mb-3">Confirm</button>
+            <a href="{% url 'profile' %}" class="btn btn-book btn-white mb-3">Cancel</a>
+        </div>
+    </div>
+</form>
+
+
+
+{% endblock %}
+

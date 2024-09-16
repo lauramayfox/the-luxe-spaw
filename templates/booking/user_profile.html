@@ -29,15 +29,14 @@
         <h2 class="text-center">My Bookings</h2>
 </div>
 <div class="container mt-4">
-    <table class="table">
+    <table class="table mx-auto text-center">
         <thead>
             <tr>
                 <th>Service</th>
                 <th>Groomer</th>
                 <th>Date</th>
                 <th>Time</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th>Make Changes</th>
             </tr>
         </thead>
         <tbody>
@@ -53,13 +52,14 @@
                 </td>
             </tr>
             {% empty %}
-            <tr class="container mt-4 text-center">
-                <td colspan="6">You have no current booking appointments.</td>
+            <tr>
+                <td colspan="5" class="text-center">You have no current booking appointments.</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
+
 
 
     
