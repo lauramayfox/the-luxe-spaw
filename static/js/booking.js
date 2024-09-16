@@ -1,4 +1,4 @@
-// Function to update booking modal with selected details
+// update booking modal with selected choices
     function updateBookingModal() {
         document.getElementById('booking-service').textContent = document.getElementById('id_service').selectedOptions[0].text;
         document.getElementById('booking-groomer').textContent = document.getElementById('id_groomer').selectedOptions[0].text;
@@ -6,7 +6,7 @@
         document.getElementById('booking-time').textContent = document.getElementById('id_booking_time').selectedOptions[0].text;
     }
 
-    // Handle booking confirmation
+    // booking confirmation
     const confirmBookingButton = document.getElementById('confirm-booking');
     if (confirmBookingButton) {
         confirmBookingButton.addEventListener('click', function () {
@@ -16,7 +16,7 @@
         });
     }
 
-    // Handle the cancel booking action
+    // cancel booking action
     const cancelBookingButton = document.getElementById('cancel-booking');
     if (cancelBookingButton) {
         cancelBookingButton.addEventListener('click', function () {
