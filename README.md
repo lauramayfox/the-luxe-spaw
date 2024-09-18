@@ -1,4 +1,4 @@
-<h1 align="center"><img src="static/images/logo.png"/></h1>
+<h1 align="center"><img src="static/images/website-images/logo.png"/></h1>
 
 # The Luxe Spaw
 ### A luxury grooming studio for dogs
@@ -15,7 +15,7 @@ Welcome to The Luxe Spaw, a luxury high-end dog grooming studio based in Dublin 
 
 For the design process I wanted to choose a 2-way colour palette that would go with the clean, modern and luxury vibe of the grooming studio. I set the base colour of the website to white, with a bold pop of pink colour scattered throughout the site. When researching colours for my project, I kept finding upon a common theme of poodles and pink. This particular image is what gave me the inspiration for the colour palete for the whole site.
 
-<h1 align="center"><img src=""/></h1>
+<h1 align="center"><img src="static/images/readme-images/dogpink.jpg"/></h1>
 
 ## UX design
 
@@ -34,6 +34,13 @@ For the design process I wanted to choose a 2-way colour palette that would go w
 
 
 ### Wireframes
+
+I initially brainstormed with a pen and paper rough sketch wireframes, along with design concepts and ideas for my website. As mentioned, I wanted a sleek, high-end modern site with a burst pop of colour. I took my wireframes to Balsamiq to see them begin to come to life.
+
+<h1 align="center"><img src="static/images/readme-images/wireframe1.jpg"/></h1>
+<h1 align="center"><img src="static/images/readme-images/wireframe2.jpg"/></h1>
+
+
 
 # Agile Development
 
@@ -84,13 +91,15 @@ The contact page gives all the necessary information for getting in touch: email
 - Google Fonts- Font styling
 - GitHub - Code and Kaban
 - Heroku - Hosting & Deployment
-- Cloudinary - Static Files 
+
 
 # Testing
 
 ### Responsiveness
 
 ### Manual testing
+
+## Issues & Bugs
 
 # Deployment
 
@@ -157,6 +166,29 @@ web: guincorn PROJECT_NAME.wsgi
 - A copy of the repository will be created in your own repository
 
 
+
+# Credits
+
 # Resources
 
-# Credits and acknowledgements
+- Initial project set up & AllAuth section followed along from 'I Think, Therefore I Blog' tutorial
+- [W3SCHOOLS](https://w3schools.com/) - General source of info & troubleshooting resource
+- [STACK OVERFLOW](https://stackoverflow.com/) - General source of info & troubleshooting resource
+- [Modal Tutorial - YouTube](https://www.youtube.com/watch?v=87Hj55vCVz8&t=2144s) - Resource to help
+understand & set up my booking modals.
+- [Booking System Walkthrough - DevGenius](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78) - Health clinic booking
+system text tutorial walkthrough as a helpful resource for CRUD functionality on my project.
+
+### Media
+
+- Royalty free images from [Unsplash](https://unsplash.com/) & [Pexels](https://pexels.com/)
+- Site logo & favicon designed and made by me
+- The mockup image at the beginning of this file was created using [Am I Responsive](http://ami.responsivedesign.is/).
+- Text sections derived from [OpenAI](https://openai.com/dall-e-2).
+
+### Acknowledgements
+
+- I first off want to thank my family for their constant support & love, thank you for believing in me.
+- I want to thank my mentor, Excellence, for his all of his support and guidance throughout the course so far.
+- Thanks to the Code Institute staff; student support, my cohort leader Kamil, and the tutoring service for being fantastic pilars of support over the last year.
+

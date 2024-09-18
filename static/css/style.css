@@ -4,15 +4,26 @@ body {
     background-color: white;
 }
 
+h2 {
+    color: #c02e48;
+}
+
+/* Contact */
+
+h4, h5 {
+    color:#c02e48;
+}
+
+
 /* Index Page */
 
 .header-1 {
-    color: #EF657C;
+    color: #c02e48;
 }
 
 hr {
     margin: 0 auto;     
-    border-top: 1px solid #EF657C;
+    border-top: 1px solid #c02e48;
 }
 
 poodle {
@@ -27,13 +38,18 @@ poodle {
 /* Button */
 
 .btn-white {
-    background-color:#EF657C;
+    background-color:#c02e48;
     margin: auto;
     color: white;
     box-shadow: #F279BC;
 
 }
 
+.btn-white:hover {
+    background-color: white;
+    color: #c02e48;
+    border-color: #c02e48;
+}
 
 
 /* Nav Bar */
@@ -46,7 +62,7 @@ poodle {
 /* Footer */
 
 .footer-bg {
-    background-color: #EF657C;
+    background-color: #c02e48;
 }
 
 .social-links i {
@@ -55,26 +71,63 @@ poodle {
     margin: 0.7rem;
 }
 
+/* Hero Image */
+#hero {
+    width: 100%; 
+    height: auto; /* Ensures full width */
+}
+
+/* Welcome Section */
+.welcome-image {
+    max-width: 100%; 
+    height: auto; 
+    margin-top: 20px;
+}
+
+.header-1 {
+    font-size: 2.5rem;
+    text-align: left;
+}
+
 /* Staff */
 
-.card-style {
-     
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: small;
+.card-group .card {
+    margin: 20px;
+    flex: 1;
 }
 
-h2 {
-    color: #EF657C;
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
 }
 
-/* Contact */
-
-h4 {
-    color:#EF657C;
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.colum-color-1 {
-    background-color: #ef657c3a;
+
+@media (max-width: 768px) {
+    /* On smaller screens, stack image and text */
+    .welcome-image {
+        margin-top: 15px;
+    }
+
+    .header-1 {
+        text-align: center;
+    }
+
+    /* Staff Cards*/
+    .card-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
 }
+
+
 

@@ -1,130 +1,76 @@
 {% extends "base.html" %}
-
 {% load static %}
-
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-
 {% block content %}
+<!-- Hero Image -->
 <div class="container bg-custom mt-4">
-            <img class="w-90 mx-auto img-fluid" id="hero"
-                src="static/images/unsplash1.jpg"
-                alt="index_hero">
-       
+   <img class="w-100 mx-auto img-fluid" id="hero" src="{% static 'images/website-images/unsplash1.jpg' %}" alt="Image Of Jack Russell">
 </div>
-<br>
+<!-- Welcome Section -->
 <div class="container brief-container mt-6 mb-5">
-    <div class="row">
-        <div class="col-md-8">
-            <br>
-            <h1 class="header-1">Welcome To The Luxe Spaw</h1>
-            <div class="col-md-7">
-                <hr>
-                </div>
-                <br>
-            <div class="d-none d-md-block">
-                <p>Nestled in the heart of Dublin, our luxury grooming studio offers a premier experience for discerning dog owners who seek the very best for their four-legged companions. 
-                    Our state-of-the-art facility combines modern aesthetics with top-notch amenities, creating an inviting and serene environment where every dog is treated with the utmost care and attention. 
-                    Specializing in a comprehensive range of grooming services, from breed-specific cuts to indulgent spa treatments, our team of experienced and passionate groomers ensures that each pet leaves 
-                    looking and feeling their absolute best. At our studio, we believe that grooming is not just about appearance, but also about promoting the overall health and well-being of your cherished pet, 
-                    making it a haven for dog lovers in Dublin who desire nothing but excellence.<br>
-                <br>
-
-                 <!-- Button -->
-                 <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                 {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
-                <button type="button" class="mb-0 btn btn-white">
-                  Book Now!
-                 </button>
-                 </a>
-            </p>
-
-            </div>
-
-        </div>
-        <div class="col-sm-8 col-md-4 col-lg-4 order-first order-md-last text-center">
-            <img  src="{% static 'images/pexels1.jpg' %}"
-                 alt="Dog Image" class="img-fluid poodle">
-        </div>
-    </div>
-</div>
- 
-<!--Grooming Team-->
-<div class="container brief-container mt-6 mb-5">
-    <h1 class="header-1">Groomers</h1>
-    <div class="col-md-7">
-    <hr>
-    </div>
-    <br></div>
-
-</div>
-<section class="row-fluid d-flex justify-content-center">
-   
-          <section class="row-fluid d-flex justify-content-center">
-           <div class="card-group col-lg-9 card-style">
-               <div class="card text-center shadow">
-                   <img src="{% static 'images/1.jpg' %}" alt="dog image" class="card-img-top staff">
-                   <div class="card-body d-flex flex-column justify-content-between">
-                       <h2 class="display-6 font-Black">David</h2>
-                       <div class="emphasised">
-                           <p class="card-text">Meet David, a skilled groomer with a special knack for working with larger breeds. Originally from Vancouver, 
-                            Canada, David moved to Ireland five years ago and has since become a trusted name in the local dog-loving community.
-                            <br><br>David's special expertise is reactive dog grooming, where he will work with each client 1-1, and come up with a plan to promote a positive, fear-free experience for your pet.
-                            When he’s not grooming, you’ll find him spending quality time with his beloved Vizsla, Ruby.<br>
-                            <br>
-                            <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                            {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
-                           <button type="button" class="mb-0 btn btn-white">
-                                  Book
-                                 </button>
-                                 </a>
-                           </p>
-                       </div>
-                    </div>
-                </section>
-                                      
-
-                         <section class="row-fluid d-flex justify-content-center">
-                            <div class="card-group col-lg-9 card-style">
-                                <div class="card text-center shadow">
-                                    <img src="{% static 'images/3.jpg' %}" alt="dog image" class="card-img-top staff">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <h2 class="display-6 font-Black">Pam</h2>
-                                        <div class="emphasised">
-                                            <p class="card-text">Meet Pam, the heart and soul of The Luxe Spaw, located in the heart of Dublin. As both the salon manager and a talented groomer, Pam specializes in creating picture-perfect cuts for small toy breeds. With a passion for pampering the tiniest of pups, she ensures each one leaves the studio looking their absolute best. 
-                                                <br><br>When she’s not managing the salon or working her magic on clients, Pam loves nothing more than a cosy night in with her own small rescue dog, Jack, who inspires her dedication to giving every dog the special care they deserve.<br>
-                                            <br>
-                                            <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                 {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
-                <button type="button" class="mb-0 btn btn-white">
-                                                      Book
-                                                     </button>
-                                                     </a>
-                                            </p>
-                                        </div>
-                                     </div>
-                                 </section>
-
-    <section class="row-fluid d-flex justify-content-center">
-    <div class="card-group col-lg-9 card-style">
-    <div class="card text-center shadow">
-    <img src="{% static 'images/4.jpg' %}" alt="dog image" class="card-img-top staff">
-    <div class="card-body d-flex flex-column justify-content-between">
-     <h2 class="display-6 font-Black">Annie</h2>
-     <div class="emphasised">
-        <p class="card-text">Meet Annie, the bright and passionate grooming apprentice at The Luxe Spaw. From a young age, Annie has had a deep love for animals, which naturally led her to pursue a career in dog grooming. 
-            <br><br>Now, as she hones her skills at The Luxe Spaw, Annie is driven by her dedication to animal welfare, often volunteering her time to support non-profit organizations that focus on dogs in need. 
-            Her enthusiasm and commitment shine through in everything she does, making her a beloved member of the team and a future star in the grooming world.<br>
-            <br>
-            <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}"
-                 {% else %} href="{% url 'create_booking' %}"{% endif %} style="text-decoration:none;" class="d-flex flex-column justify-content-center">
-                <button type="button" class="mb-0 btn btn-white">
-                  Book
-                 </button>
-                 </a>
-        </p></div>
+   <div class="row align-items-center">
+      <!-- Content -->
+      <div class="col-md-8">
+         <h1 class="header-1 text-center">Welcome To The Luxe Spaw</h1>
+         <hr class="my-4" style="width: 60%;">
+         <p class="lead">Located in the heart of Dublin, our luxury grooming studio offers a top-tier experience for our clients and their pets. 
+            We provide comprehensive grooming services, from breed-specific cuts to indulgent spa treatments, ensuring that each pet leaves 
+            looking and feeling their best. Our focus is on both appearance and well-being, making us the go-to destination for dog lovers in Dublin.
+         </p>
+         <br>
+         <div class="text-center">
+            <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}" {% else %} href="{% url 'create_booking' %}"{% endif %}
+            class="btn btn-white">
+            Book Now!
+            </a>
+         </div>
       </div>
-    
-    </section>
-</section>
-{%endblock%}
+      <div class="col-md-4 text-center">
+         <img src="{% static 'images/website-images/pexels1.jpg' %}" alt="Poodle Dog With Pink Background" class="img-fluid rounded welcome-image">
+      </div>
+   </div>
+</div>
+<!-- Grooming Section -->
+<div class="container brief-container mt-6 mb-5">
+   <h1 class="header-1 text-center">Groomers</h1>
+   <hr class="my-4" style="width: 30%;">
+   <br>
+   <!-- Groomers Cards -->
+   <section class="row d-flex justify-content-center">
+      <div class="card-group col-lg-11">
+         <!-- David -->
+         <div class="card text-center shadow mx-4">
+            <img src="{% static 'images/website-images/groomer1.jpg' %}" alt="Groomer With Dog" class="card-img-top staff img-fluid">
+            <div class="card-body d-flex flex-column justify-content-between">
+               <h2 class="display-6 font-Black">David</h2>
+               <p class="card-text">David specializes in reactive dogs, creating fear-free experiences. 
+                  Outside of work, he enjoys spending time with his Vizsla, Ruby.
+               </p>
+               <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}" {% else %} href="{% url 'create_booking' %}"{% endif %}
+               class="btn btn-white mt-auto">Book</a>
+            </div>
+         </div>
+         <!-- Pam-->
+         <div class="card text-center shadow mx-4">
+            <img src="{% static 'images/website-images/groomer2.jpg' %}" alt="Groomer With Dog" class="card-img-top staff img-fluid">
+            <div class="card-body d-flex flex-column justify-content-between">
+               <h2 class="display-6 font-Black">Pam</h2>
+               <p class="card-text">Pam specializes in small toy breeds, ensuring each one leaves the studio looking their absolute best.</p>
+               <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}" {% else %} href="{% url 'create_booking' %}"{% endif %}
+               class="btn btn-white mt-auto">Book</a>
+            </div>
+         </div>
+         <!-- Annie -->
+         <div class="card text-center shadow mx-4">
+            <img src="{% static 'images/website-images/groomer3.jpg' %}" alt="dog image" class="card-img-top staff img-fluid">
+            <div class="card-body d-flex flex-column justify-content-between">
+               <h2 class="display-6 font-Black">Annie</h2>
+               <p class="card-text">Annie is passionate about animals, honing her grooming skills and volunteering for non-profits.</p>
+               <a {% if not user.is_authenticated %} href="{% url 'account_signup' %}" {% else %} href="{% url 'create_booking' %}"{% endif %}
+               class="btn btn-white mt-auto">Book</a>
+            </div>
+         </div>
+      </div>
+   </section>
+</div>
+{% endblock %}

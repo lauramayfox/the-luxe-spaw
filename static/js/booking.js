@@ -20,7 +20,7 @@
     const cancelBookingButton = document.getElementById('cancel-booking');
     if (cancelBookingButton) {
         cancelBookingButton.addEventListener('click', function () {
-            window.location.href = 'booking/create_booking.html';
+            window.location.href = '/';
         });
     }
 
