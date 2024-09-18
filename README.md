@@ -128,6 +128,16 @@ Once logged in, the customer can see any upcoming appointments and use CRUD func
 
 <h1 align="center"><img src="static/images/readme-images/profile.jpg"/></h1>
 
+## Modals
+
+<h1 align="center"><img src="static/images/readme-images/modal1.jpg"/></h1>
+<h1 align="center"><img src="static/images/readme-images/modal2.jpg"/></h1>
+
+## Booking Confirmation
+
+<h1 align="center"><img src="static/images/readme-images/thankyou.jpg"/></h1>
+
+
 ## Authentication
 
 - User can sign up and create their own profile for bookings
