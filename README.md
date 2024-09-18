@@ -18,7 +18,6 @@ For the design process I wanted to choose a 2-way colour palette that would go w
 <h1 align="center"><img src="static/images/readme-images/dogpink.jpg"/></h1>
 
 
-## UX design
 
 ## Site User Goals
 
@@ -33,6 +32,11 @@ For the design process I wanted to choose a 2-way colour palette that would go w
 - To safely handle sensitive client data in a safe, proffesional manner
 
 
+### Colour Palette
+
+The colour theme was chosen after researching several grooming salon websites, I knew I wanted white as the main background with a splash of a particular colour. I landed on pink after finding this image of a mini-poodle online.
+
+<h1 align="center"><img src="static/images/readme-images/colourtheme.jpg"/></h1>
 
 ### Wireframes
 
@@ -41,7 +45,13 @@ I initially brainstormed with a pen and paper rough sketch wireframes, along wit
 <h1 align="center"><img src="static/images/readme-images/wireframe1.jpg"/></h1>
 <h1 align="center"><img src="static/images/readme-images/wireframe2.jpg"/></h1>
 
+# UX
 
+## Data Structure
+
+<h1 align="center"><img src="static/images/readme-images/datastructure.jpg"/></h1>
+
+After deciding on the features for my project, I created a database structure schema to get an idea of how my data base and relationships between each type would work.
 
 # Agile Development
 
@@ -49,13 +59,33 @@ Using GitHub Projects, I took on this project using Agile development methods to
 
 ## User Stories
 
+Github projects was used to help me keep track of project features and to help me focus on each sprint. I created a kaban board for my user stories, and added the MoSCoW (Must have, Should have, Could have, Won't have) prioritization to my user stories.
 
-1. [USER STORY: ACCOUNT REGISTRATION](https://github.com/users/lauramayfox/projects/3/views/1?pane=issue&itemId=73397032)
-2. [USER STORY: ADMIN PANEL]()
+<h1 align="center"><img src="static/images/readme-images/moscow.jpg"/></h1>
+<h1 align="center"><img src="static/images/readme-images/moscow2.jpg"/></h1>
+
+- USER STORY 1: Account Registration: As a Site User, I can register an account so that I can book in for grooming services.
+- USER STORY 2: Log In: As a user, I can log in so that I can access my profile.
+- USER STORY 3: Book Appointment: As a registered user, I want to create and book in my own appointments for my pet so that the process is easy and straightforward without the hassle of contacting the groomers directly.
+- USER STORY 4: Contact Information: As a user, I want to view information regarding open hours, directions and contact information so that I understand where the location is and have their direct details should I need to contact them further.
+- USER STORY 5: Services & Pricelist: As a user, I want to know what services are available, and what the cost is so that I know if the business can cater to my pet's needs.
+- USER STORY 6: Admin Functionality: As an admin, I need to have CRUD access to database data so that I can make necessary changes with ease of access whenever I need.
+- USER STORY 7: Groomers: As a user, I can see a list of the groomers to choose from, and read a blurb about them so that I can make a right choice in who can groom my pet.
+- USER STORY 8: About: As a user, I can read about the grooming salon to get a feel for their business ethos to make sure it is a good fit for my pet.
+- USER STORY 9: Site Adjustments: As a site admin, I can conveniently and easily make adjustments to the grooming service options available to book in the customer profile, and I can also update my groomers should I have any staff to add or remove.
+- USER STORY 10: Update appointments: As a registered user, I want to cancel my own bookings, or update the day so that I can have a user-friendly experience with less hassle of having to contact the grooming salon directly each time.
+- USER STORY 11: Book any groomer: As a user, I can make a booking with any groomer, none specified so that I don't have to make a choice if I don't know who to go with.
+- USER STORY 12: Confirmation text/email: As a user, I can get a further confirmation outside of my client portal with a confirmation via email or text automatically sent.
 
 # Features
 
 All pages, except for the customer profile portal, can be viewed without registering for an account.
+
+## Features Left To Implement
+
+- Not to allow more than 1 booking on the same time/day; create a unique index on Groomer, Date & Time.
+- Ability to edit/delete profile for the customer from their profile page
+- User stories 11 & 12 - Ability to book any groomer and customer to receive a confirmation text/email about their appointment.
 
 ## Base HTML:
 
@@ -66,7 +96,7 @@ The header/nav bar and footer were created in a base file and loaded onto each p
 
 ### Index page:
 
-The home page features information of the grooming studio, as well as staff profiles to match suitable clients and their pets to their groomer of choice.
+The home page (index) features a minimal header with a large hero image for visual impact. Under the hero image is a small about section and groomer profiles to give the client an idea of the salon, and also to help match them with the right groomer for their needs.
 
 <h1 align="center"><img src="static/images/readme-images/index.jpg"/></h1>
 <h1 align="center"><img src="static/images/readme-images/index2.jpg"/></h1>
@@ -129,21 +159,88 @@ Once logged in, the customer can see any upcoming appointments and use CRUD func
 
 - HTML Validation passed
 
-<h1 align="center"><img src="static/images/website-images/htmlvalidation.jpg"/></h1>
+<h1 align="center"><img src="static/images/readme-images/htmlvalidation.jpg"/></h1>
 
 - CSS Validation passed:
 
-<h1 align="center"><img src="static/images/website-images/cssvalidation.jpg"/></h1>
+<h1 align="center"><img src="static/images/readme-images/cssvalidation.jpg"/></h1>
 
 - Pep8 CI Linter passed (Example file):
 
-<h1 align="center"><img src="static/images/website-images/pep8linter.jpg"/></h1>
+<h1 align="center"><img src="static/images/readme-images/pep8linter.jpg"/></h1>
+
+
+## Manual testing
+
+Chrome DevTools was used during the development process to check and modify HTML and CSS styles used in the project.
+
+### Account Registration
+
+| Test |Result  |
+|--|--|
+| User can create a profile | Pass |
+| User can log in | Pass |
+| User can log out | Pass |
+| Messages displaying | Pass |
+
+### User Navigation Tests
+
+| Test | Result  |
+|--|--|
+| User can navigate to Bookings in profile | Pass |
+| User can access each page | Pass|
+| SuperUser can access admin page|Pass|
+
+#### Account Authorisation Tests
+
+| Test | Result  |
+|--|--|
+| Only Superuser can access admin page |Pass|
+| Non authorised user can't access profile or booking page| Pass|
+
+#### Booking and Profile
+
+| Test |Result  |
+|--|--|
+|User can make a booking | Pass |
+|User can view upcoming bookings | Pass |
+|User can delete any booking | Pass |
+|User can update booking | Pass |
+|User can make multiple bookings | Pass |
+|User can see the confirmation information | Pass |
 
 ### Responsiveness
 
-### Manual testing
+- The website is entirely responsive thanks to Bootstrap and media queries
+- Hamburger navbar will display on smaller devices, and layout changes will update.
 
-## Issues & Bugs
+### Browser Testing
+
+Browser | Outcome | Pass/Fail |
+--- | --- | --- |
+Google Chrome | No issues found (appearance/responsiveness)| Pass |
+Safari |  No issues found (appearance/responsiveness) | Pass |
+Mozilla Firefox |  No issues found (appearance/responsiveness)| Pass |
+Microsoft Edge |  No issues found (appearance/responsiveness) | Pass |
+
+### Lighthouse Testing 
+
+<h1 align="center"><img src="static/images/readme-images/lighthouse.jpg"/></h1>
+<h1 align="center"><img src="static/images/readme-images/lighthouse2.jpg"/></h1>
+
+- Lighthouse testing initially showed me my first option colour palette would not work due to accessibility issues, so I increased the contrast and got a great result.
+- Performance issues appeared which seemed to be in relation to my hero image. For a future deployment this is something I would amend to improve and bring up the overall performance.
+
+
+### Known Issues & Bugs
+
+- There is an error I found during testing that if there are blank inputs the modal appears. Fortunately, when you click to book, the required field warnings come up on each field, but something to fix for future deployment.
+
+<h1 align="center"><img src="static/images/readme-images/modalerror.jpg"/></h1>
+
+- Another bug I found during testing was when you are in the customer profile portal and click to update a booking, if you click 'cancel' a modal bug flashes momentarily before returning to the customer portal. I did not have time to rectify this issue, but something to fix for future deployment.
+
+
 
 # Deployment
 
