@@ -16,6 +16,7 @@ Welcome to The Luxe Spaw, a luxury high-end dog grooming studio based in Dublin 
 For the design process I wanted to choose a 2-way colour palette that would go with the clean, modern and luxury vibe of the grooming studio. I set the base colour of the website to white, with a bold pop of pink colour scattered throughout the site. When researching colours for my project, I kept finding upon a common theme of poodles and pink. This particular image is what gave me the inspiration for the colour palete for the whole site.
 
 <h1 align="center"><img src="static/images/readme-images/dogpink.jpg"/></h1>
+<h1 align="center"><img src="static/images/website-images/dogpink.jpg"/></h1>
 
 ## UX design
 
@@ -56,19 +57,46 @@ Using GitHub Projects, I took on this project using Agile development methods to
 
 All pages, except for the customer profile portal, can be viewed without registering for an account.
 
+## Base HTML:
+
+The header/nav bar and footer were created in a base file and loaded onto each page at the start of every file.
+
+<h1 align="center"><img src="static/images/website-images/header.png"/></h1>
+<h1 align="center"><img src="static/images/website-images/footer.png"/></h1>
+
 ### Index page:
 
 The home page features information of the grooming studio, as well as staff profiles to match suitable clients and their pets to their groomer of choice.
+
+<h1 align="center"><img src="static/images/website-images/index.png"/></h1>
+<h1 align="center"><img src="static/images/website-images/index2.png"/></h1>
+<h1 align="center"><img src="static/images/website-images/index3.png"/></h1>
+
 
 ## Services page
 
 A section to explain how the booking appointments work, and what service option may suit the client and their pet. This page contains text explaining the options, as well as a structured pricing list depending on the dog's size.
 
+<h1 align="center"><img src="static/images/website-images/services.png"/></h1>
+<h1 align="center"><img src="static/images/website-images/pricelist.png"/></h1>
+
 ## Contact page
 
 The contact page gives all the necessary information for getting in touch: email, phone and a further booking link. It also has a google map showcasing the address and map location.
 
-### Booking System
+<h1 align="center"><img src="static/images/website-images/contactpage.png"/></h1>
+
+## Booking page
+
+The booking page can be accessed via several buttons I created which redirects the client to book in.
+
+<h1 align="center"><img src="static/images/website-images/bookingpage.png"/></h1>
+
+## Customer profile
+
+Once logged in, the customer can see any upcoming appointments and use CRUD functionality to update or delete future appointments.
+
+<h1 align="center"><img src="static/images/website-images/profile.png"/></h1>
 
 ## Authentication
 
@@ -94,6 +122,12 @@ The contact page gives all the necessary information for getting in touch: email
 
 
 # Testing
+
+- HTML Validation passed
+
+<h1 align="center"><img src="static/images/website-images/htmlvalidation.png"/></h1>
+
+- CSS Validation:
 
 ### Responsiveness
 
