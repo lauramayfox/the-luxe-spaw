@@ -173,7 +173,7 @@ Once logged in, the customer can see any upcoming appointments and use CRUD func
 
 - CSS Validation passed:
 
-<h1 align="center"><img src="static/images/readme-images/cssvalidation.jpg"/></h1>
+<h1 align="center"><img src="static/images/readme-images/cssvalidator.jpg"/></h1>
 
 - Pep8 CI Linter passed (Example file):
 
