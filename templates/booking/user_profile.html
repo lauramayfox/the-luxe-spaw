@@ -1,104 +1,51 @@
 {% extends "base.html" %}
-
 {% load static %}
-
 {% block extrahead %}
-
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
-
-{%endblock%}
-
-
-{% block content %}
-
-<section class="container-fluid">
-
-    {% if user.is_authenticated %}
-    <br>
-    <br>
-        <div class="row-fluid d-flex justify-content-center colum-color-1">
-            <div class="col-sm-12 col-lg-7 text-center">
-                <h1 class="display-5 m-5 header-1">{{ user.username}}</h1>
-                <p class="emphasised">Welcome to your profile!</p>
-                <p class="emphasised">You can manage your details and upcoming grooming appointments here.<br><br></p>
-            </div>
-        </div>
-        </section>
-
-
-        <h2 class="text-center">My Bookings</h2>
-    </div>
-    <div class="container mt-4">
-    <table class="table mx-auto text-center">
-        <thead>
-            <tr>
-                <th>Service</th>
-                <th>Groomer</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Make Changes</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for booking in bookings %}
-            <tr>
-                <td>{{ booking.service }}</td>
-                <td>{{ booking.groomer }}</td>
-                <td>{{ booking.booking_date }}</td>
-                <td>{{ booking.booking_time }}</td>
-                <td>
-                    <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Update</a>
-                    <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="5" class="text-center">You have no current booking appointments.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
 {% endblock %}
-
-
-    
-<!-- <div class="container mt-4">
-<h2 class="text-center">My Bookings</h2>
+{% block content %}
+<section class="container-fluid">
+{% if user.is_authenticated %}
+<div class="row justify-content-center my-4 colum-color-1">
+   <div class="col-12 col-md-10 col-lg-8 text-center">
+      <h1 class="display-5 m-5 header-1 text-center">{{ user.username }}</h1>
+      <p class="emphasised">Welcome to your profile!</p>
+      <p class="emphasised">You can manage your details and upcoming grooming appointments here.</p>
+   </div>
 </div>
 <div class="container mt-4">
-    <table class="table">
-        <thead>
+   <h2 class="text-center">My Bookings</h2>
+   <div class="table-responsive">
+      <table class="table text-center">
+         <thead>
             <tr>
-                <th>Service</th>
-                <th>Groomer</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th>Actions</th>
+               <th>Service</th>
+               <th>Groomer</th>
+               <th>Date</th>
+               <th>Time</th>
+               <th>Make Changes</th>
             </tr>
-        </thead>
-        <tbody>
+         </thead>
+         <tbody>
             {% for booking in bookings %}
             <tr>
-                <td>{{ booking.service }}</td>
-                <td>{{ booking.groomer }}</td>
-                <td>{{ booking.booking_date }}</td>
-                <td>{{ booking.booking_time }}</td>
-                <td>
-                    <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Update</a>
-                    <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
-                </td>
+               <td>{{ booking.service }}</td>
+               <td>{{ booking.groomer }}</td>
+               <td>{{ booking.booking_date }}</td>
+               <td>{{ booking.booking_time }}</td>
+               <td>
+                  <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary btn-sm">Update</a>
+                  <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger btn-sm">Delete</a>
+               </td>
             </tr>
             {% empty %}
-            <tr class="container mt-4 text-center">
-                <td colspan="6">You have no current booking appointments.</td>
+            <tr>
+               <td colspan="5" class="text-center">You have no current booking appointments.</td>
             </tr>
             {% endfor %}
-        </tbody>
-    </table>
+         </tbody>
+      </table>
+   </div>
 </div>
-
-{% endif %}  -->
-
-
+{% endif %}
+{% endblock %}

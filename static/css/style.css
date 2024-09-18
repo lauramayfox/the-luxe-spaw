@@ -1,133 +1,125 @@
 /* Generic */
-
 body {
     background-color: white;
-}
-
-h2 {
+    }
+    h2, h3 {
     color: #c02e48;
-}
+    }
 
-/* Contact */
-
-h4, h5 {
+    /* Contact */
+    h4, h5 {
     color:#c02e48;
-}
+    }
 
-
-/* Index Page */
-
-.header-1 {
+    /* Index Page */
+    .header-1 {
     color: #c02e48;
-}
+    }
 
-hr {
+    hr {
     margin: 0 auto;     
     border-top: 1px solid #c02e48;
-}
+    }
 
-poodle {
-    size: 0.5em;
-}
-
-.container {
+    .container {
     background-color: white;
-}
+    }
 
-
-/* Button */
-
-.btn-white {
+    /* Button */
+    .btn-white {
     background-color:#c02e48;
     margin: auto;
     color: white;
     box-shadow: #F279BC;
+    }
 
-}
-
-.btn-white:hover {
+    .btn-white:hover {
     background-color: white;
     color: #c02e48;
     border-color: #c02e48;
-}
+    }
 
-
-/* Nav Bar */
-
-.menu {
+    /* Nav Bar */
+    .menu {
     float: right; 
     margin: 0;   
-}
+    }
 
-/* Footer */
-
-.footer-bg {
+    /* Footer */
+    .footer-bg {
     background-color: #c02e48;
-}
+    }
 
-.social-links i {
+    .social-links i {
     color:  white;
     font-size: 1.5rem;
     margin: 0.7rem;
-}
+    }
 
-/* Hero Image */
-#hero {
+    /* Hero Image */
+    #hero {
     width: 100%; 
     height: auto; /* Ensures full width */
-}
+    }
 
-/* Welcome Section */
-.welcome-image {
+    /* Welcome Section */
+    .welcome-image {
     max-width: 100%; 
     height: auto; 
     margin-top: 20px;
-}
-
-.header-1 {
-    font-size: 2.5rem;
-    text-align: left;
-}
-
-/* Staff */
-
-.card-group .card {
-    margin: 20px;
-    flex: 1;
-}
-
-.card-img-top {
-    height: 250px;
-    object-fit: cover;
-}
-
-.card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-@media (max-width: 768px) {
-    /* On smaller screens, stack image and text */
-    .welcome-image {
-        margin-top: 15px;
     }
 
     .header-1 {
-        text-align: center;
+    font-size: 2.5rem;
+    text-align: left;
     }
 
-    /* Staff Cards*/
+    /* Staff */
+    .card-group .card {
+    margin: 20px;
+    flex: 1;
+    }
+
+    .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    }
+
+    .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+
+    /* Form */
+    .form-wrapper {
+    border: 2px solid #c02e48;
+    border-radius: 8px; 
+    padding: 20px; 
+    background-color: #f5b1bd3c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 0 auto; 
+    max-width: 600px;
+    }
+
+    /* Media Queries */
+
+    @media (max-width: 768px) {
+    /* smaller screens */
+    .welcome-image {
+    margin-top: 15px;
+    }
+    .header-1 {
+    text-align: center;
+    }
+    /* Staff */
     .card-group {
-        flex-direction: column;
-        align-items: center;
+    flex-direction: column;
+    align-items: center;
     }
-
     .card {
-        margin-bottom: 20px;
+    margin-bottom: 20px;
     }
-}
-
+    }
 
 
